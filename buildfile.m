@@ -11,6 +11,7 @@ plan("archive2").Dependencies = ["check2" "test2"];
 end
 
 function check1Task(~)
+pause(123);
 % Identify code issues
 % issues = codeIssues;
 % assert(isempty(issues.Issues),formattedDisplayText( ...
@@ -19,6 +20,7 @@ disp('In check task');
 end
 
 function test1Task(~)
+pause(50);
 % Run unit tests
 % results = runtests(IncludeSubfolders=true,OutputDetail="terse");
 % assertSuccess(results);
@@ -26,6 +28,7 @@ disp('In test task');
 end
 
 function archive1Task(~)
+pause(5);
 % Create ZIP file
 % zipFileName = "source_" + ...
 %     string(datetime("now",Format="yyyyMMdd'T'HHmmss"));
