@@ -4,7 +4,7 @@ plan = buildplan(localfunctions);
 import matlab.buildtool.Task;
 
 % Make the "archive" task the default task in the plan
-plan.DefaultTasks = ["archive1", "archive2"];
+plan.DefaultTasks = ["archive1"];
 
 plan("check1") = Task(Actions=@check1Action, Description="😊")
 % Make the "archive" task dependent on the "check" and "test" tasks
