@@ -6,9 +6,9 @@ import matlab.buildtool.Task;
 % Make the "archive" task the default task in the plan
 plan.DefaultTasks = ["archive1"];
 
-plan("test1") = Task(Actions=@test1Action, Description="😊")
-plan("check1") = Task(Actions=@check1Action, Description="🚀")
-plan("archive1") = Task(Actions=@archive1Action, Description="💸")
+plan("test1") = Task(Actions=@test1Action, Description="😊");
+plan("check1") = Task(Actions=@check1Action, Description="🚀");
+plan("archive1") = Task(Actions=@archive1Action, Description="💸");
 % Make the "archive" task dependent on the "check" and "test" tasks
 plan("archive1").Dependencies = ["check1" "test1"];
 plan("archive2").Dependencies = ["check2" "test2"];
@@ -31,7 +31,7 @@ pause(5);
 disp('In test task');
 end
 
-function archive1Task(~)
+function archive1Action(~)
 pause(2);
 % Create ZIP file
 % zipFileName = "source_" + ...
