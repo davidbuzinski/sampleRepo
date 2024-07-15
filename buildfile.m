@@ -6,7 +6,9 @@ import matlab.buildtool.Task;
 % Make the "archive" task the default task in the plan
 plan.DefaultTasks = ["archive1"];
 
-plan("check1") = Task(Actions=@check1Action, Description="😊")
+plan("test1") = Task(Actions=@test1Action, Description="😊")
+plan("check1") = Task(Actions=@check1Action, Description="🚀")
+plan("archive1") = Task(Actions=@archive1Action, Description="💸")
 % Make the "archive" task dependent on the "check" and "test" tasks
 plan("archive1").Dependencies = ["check1" "test1"];
 plan("archive2").Dependencies = ["check2" "test2"];
@@ -21,7 +23,7 @@ pause(12);
 disp('In check task');
 end
 
-function test1Task(~)
+function test1Action(~)
 pause(5);
 % Run unit tests
 % results = runtests(IncludeSubfolders=true,OutputDetail="terse");
