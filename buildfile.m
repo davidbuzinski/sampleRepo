@@ -5,12 +5,13 @@ plan = buildplan(localfunctions);
 % Make the "archive" task the default task in the plan
 plan.DefaultTasks = ["archive1", "archive2"];
 
+plan("check1😊") = Task(Actions=@check1Action, Description="😊")
 % Make the "archive" task dependent on the "check" and "test" tasks
 plan("archive1").Dependencies = ["check1" "test1"];
 plan("archive2").Dependencies = ["check2" "test2"];
 end
 
-function check1😊Task(~)
+function check1Action(~)
 pause(12);
 % Identify code issues
 % issues = codeIssues;
