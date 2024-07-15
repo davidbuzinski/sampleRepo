@@ -3,7 +3,7 @@ function plan = buildfile
 plan = buildplan(localfunctions);
 
 % Make the "archive" task the default task in the plan
-plan.DefaultTasks = "archive";
+plan.DefaultTasks = ["archive1", "archive2"];
 
 % Make the "archive" task dependent on the "check" and "test" tasks
 plan("archive1").Dependencies = ["check1" "test1"];
