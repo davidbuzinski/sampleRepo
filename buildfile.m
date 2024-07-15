@@ -10,7 +10,7 @@ plan("archive1").Dependencies = ["check1" "test1"];
 plan("archive2").Dependencies = ["check2" "test2"];
 end
 
-function check1Task(~)
+function check1😊Task(~)
 pause(12);
 % Identify code issues
 % issues = codeIssues;
