@@ -1,13 +1,14 @@
 function plan = buildfile
 % Create a plan from the task functions
 plan = buildplan(localfunctions);
+import matlab.buildtool.Task;
 
 % Make the "archive" task the default task in the plan
 plan.DefaultTasks = ["archive1", "archive2"];
 
-plan("check1") = Task(Actions=@check1Action, Description="AAA")
+plan("check.%^&*") = Task(Actions=@check1Action, Description="😊")
 % Make the "archive" task dependent on the "check" and "test" tasks
-plan("archive1").Dependencies = ["check1" "test1"];
+plan("archive1").Dependencies = ["check.%^&*" "test1"];
 plan("archive2").Dependencies = ["check2" "test2"];
 end
 
