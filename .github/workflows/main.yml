@@ -12,10 +12,5 @@ jobs:
         uses: matlab-actions/setup-matlab@v2
         with:
           cache: true
-      - run: mkdir tst
-      - run: cp buildfile.m tst
-      - run: rm buildfile.m
       - name: Run build
-        uses: matlab-actions/run-build@v2.4.0
-        with:
-          startup-options: -sd tst
+        uses: matlab-actions/run-build@v2
